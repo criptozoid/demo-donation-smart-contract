@@ -173,11 +173,11 @@
 	},
 	"sources": {
 		"contracts/DonateCrypto.sol": {
-			"keccak256": "0x2593d6e42c279a07e0297ab9b01a0c6fbeb8cac5fc7592bc24557ddce5f3cef0",
+			"keccak256": "0xe28847618a6013523caef68b3f6c2c509dbe778801a20da592cbb8c3ad46c8bb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a12127c7c7390fc03cc6dc925cdaecd0ccde09822d554c7cf6b53f4a0193d000",
-				"dweb:/ipfs/QmbR2v1EMRiEtQuDhe5K4LScGDwZ2mixcQsRZmJpXPLcvh"
+				"bzz-raw://663d199a8a1f9524996331bc90caa378eb42e01376e8c53bc9a8d65e6044a9fd",
+				"dweb:/ipfs/QmWcFbNg6W4dRJgM8s4WP5M4WjiJo3cAzFEpue9KTSeZRS"
 			]
 		}
 	},
