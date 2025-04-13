@@ -1,0 +1,10 @@
+# Ignore IDE config
+.idea/
+.vscode/
+
+# Exclude build artifacts (compiled contracts)
+contracts/*.bin
+
+# Don't track unnecessary files
+node_modules/
+.truffle-build/

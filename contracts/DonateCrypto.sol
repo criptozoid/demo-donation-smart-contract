@@ -2,6 +2,9 @@
 
 pragma solidity ^0.8.17;
 
+// senha1 SMARTCONTRACT
+
+
 struct Campaign {
     address creator;
     uint256 goalAmount;
@@ -35,22 +38,22 @@ contract DonatCrypto {
     }
 
     function donate(uint256 id) public payable {
-        require (campaigns[id].active, "The campaign is not active");
-        require (msg.value > 0, "Donation must be greater than zero");
+        require (campaigns[id].active, "Campaign is not active");
+        require (msg.value != 0, "Donation must be greater than zero");
         
         campaigns[id].balance += msg.value;
     }
 
     function withdraw(uint256 id) public {
-        Campaign memory campaign = campaigns[id];
-        require (campaign.creator == msg.sender, "You are not the owner of this campaign");
-        require (campaign.active == true, "This campaign is closed");
-        require (campaign.balance > fee, "This campaign does not have enough balance");
+        Campaign storage campaign = campaigns[id];
+        require (campaign.creator == msg.sender, "Only the owner can withdraw");
+        require (campaign.active == true, "Campaign is closed");
+        require (campaign.balance > fee, "Insufficient balance");
 
         address payable recipient = payable(campaign.creator);
         (bool success, ) = recipient.call{value: campaign.balance - fee}("");
-        require (success);
+        require (success, "Transaction failed");
 
-        campaigns[id].active = false;
+        campaign.active = false;
     }
 }
